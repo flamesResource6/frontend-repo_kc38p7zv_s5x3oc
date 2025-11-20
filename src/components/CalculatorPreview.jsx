@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 
 export default function CalculatorPreview() {
   const [tilt, setTilt] = useState(25) // panel tilt degrees
@@ -22,32 +22,36 @@ export default function CalculatorPreview() {
 
   // Card interactivity: subtle parallax on pointer
   const cardRef = useRef(null)
-  useEffect(() => {
+  let rafId = useRef(0)
+
+  const handlePointerMove = (e) => {
     const el = cardRef.current
     if (!el) return
-    const onMove = (e) => {
+    cancelAnimationFrame(rafId.current)
+    rafId.current = requestAnimationFrame(() => {
       const rect = el.getBoundingClientRect()
       const px = (e.clientX - rect.left) / rect.width
       const py = (e.clientY - rect.top) / rect.height
-      const rx = (py - 0.5) * 8
-      const ry = (0.5 - px) * 8
+      const rx = (py - 0.5) * 10
+      const ry = (0.5 - px) * 10
       el.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`
-    }
-    const reset = () => { el.style.transform = 'rotateX(0deg) rotateY(0deg)' }
-    el.addEventListener('pointermove', onMove)
-    el.addEventListener('pointerleave', reset)
-    return () => {
-      el.removeEventListener('pointermove', onMove)
-      el.removeEventListener('pointerleave', reset)
-    }
-  }, [])
+    })
+  }
+
+  const handlePointerLeave = () => {
+    const el = cardRef.current
+    if (!el) return
+    el.style.transform = 'rotateX(0deg) rotateY(0deg)'
+  }
 
   return (
     <div className="w-full">
-      <div className="relative rounded-2xl border border-white/10 bg-white/5 p-4 overflow-hidden">
+      <div className="relative rounded-2xl border border-white/10 bg-white/5 p-4 overflow-hidden" style={{ perspective: '900px' }}>
         <div
           ref={cardRef}
-          className="aspect-[4/3] w-full rounded-xl bg-slate-900/60 ring-1 ring-white/10 transition-transform duration-150 ease-out will-change-transform">
+          onPointerMove={handlePointerMove}
+          onPointerLeave={handlePointerLeave}
+          className="aspect-[4/3] w-full rounded-xl bg-slate-900/60 ring-1 ring-white/10 transition-transform duration-150 ease-out will-change-transform cursor-pointer shadow-xl">
           {/* pseudo scene */}
           <Scene tilt={tilt} azimuth={azimuth} score={estimate.score} />
         </div>
@@ -105,20 +109,22 @@ function LabeledSlider({ label, value, setValue, min, max, step = 1, unit }) {
 
 function Scene({ tilt, azimuth, score }) {
   // Simple 2D scene with sun position and panel orientation
+  const sunTop = 20 + Math.sin((azimuth / 180) * Math.PI) * 30
+  const sunLeft = 20 + Math.cos((azimuth / 180) * Math.PI) * 50
   return (
     <div className="relative w-full h-full">
       {/* sun */}
       <div
         className="absolute w-16 h-16 rounded-full"
         style={{
-          top: `${20 + (Math.sin((azimuth / 180) * Math.PI) * 30).toFixed(2)}%`,
-          left: `${20 + (Math.cos((azimuth / 180) * Math.PI) * 50).toFixed(2)}%`,
+          top: `${sunTop}%`,
+          left: `${sunLeft}%`,
           background: 'radial-gradient(circle, rgba(253,224,71,0.95), rgba(253,224,71,0.2))',
           boxShadow: '0 0 40px rgba(253,224,71,0.6)'
         }}
       />
       {/* panel */}
-      <div className="absolute inset-x-8 bottom-6 h-24 perspective-500">
+      <div className="absolute inset-x-8 bottom-6 h-24" style={{ transformStyle: 'preserve-3d' }}>
         <div
           className="w-full h-full bg-gradient-to-br from-slate-700 to-slate-900 rounded-lg border border-white/10 shadow-2xl"
           style={{ transform: `rotateX(${tilt}deg)` }}
