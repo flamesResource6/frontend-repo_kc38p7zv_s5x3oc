@@ -3,7 +3,308 @@
 > vite
 
 
-  VITE v5.4.20  ready in 250 ms
+  VITE v5.4.20  ready in 240 ms
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.4.120:3000/
+10:28:27 AM [vite] Pre-transform error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+10:28:27 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:28:28 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:28:51 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:04 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:06 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:08 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:08 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:10 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:18 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:28 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:34 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:29:57 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+10:31:18 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/components/Hero.jsx:25:43: ERROR: Expected "{" but found "\\"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/components/Hero.jsx:25:43
+  
+  Expected "{" but found "\\"
+  23 |        {/* Background 3D scene */}
+  24 |        <div className="absolute inset-0 -z-10">
+  25 |          <Suspense fallback={<div className=\"w-full h-full bg-slate-900\" />}> 
+     |                                             ^
+  26 |            {/* Replace with your Spline scene URL */}
+  27 |            <Spline scene="https://prod.spline.design/9QhXo3mW5pCw3k5V/scene.splinecode" />
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
