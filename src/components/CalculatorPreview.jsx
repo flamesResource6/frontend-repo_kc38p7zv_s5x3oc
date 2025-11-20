@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState, useEffect } from 'react'
 
 export default function CalculatorPreview() {
   const [tilt, setTilt] = useState(25) // panel tilt degrees
@@ -6,7 +6,34 @@ export default function CalculatorPreview() {
   const [irradiance, setIrradiance] = useState(4.8) // kWh/m^2/day baseline
   const [area, setArea] = useState(18) // m^2
 
-  // Simple pseudo model for quick feedback
+  const backendUrl = import.meta.env.VITE_BACKEND_URL
+  const [serverEstimate, setServerEstimate] = useState(null)
+  const [serverError, setServerError] = useState(null)
+
+  // Debounced backend sync to mirror the pseudo-model with real API
+  useEffect(() => {
+    let active = true
+    if (!backendUrl) { setServerEstimate(null); return }
+    const controller = new AbortController()
+    const t = setTimeout(async () => {
+      try {
+        const res = await fetch(`${backendUrl}/api/energy/estimate`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tilt, azimuth, irradiance, area }),
+          signal: controller.signal
+        })
+        if (!res.ok) throw new Error('Bad response')
+        const data = await res.json()
+        if (active) { setServerEstimate(data); setServerError(null) }
+      } catch (e) {
+        if (active) setServerError('offline')
+      }
+    }, 250)
+    return () => { active = false; controller.abort(); clearTimeout(t) }
+  }, [tilt, azimuth, irradiance, area, backendUrl])
+
+  // Simple pseudo model for instant feedback
   const estimate = useMemo(() => {
     const tiltFactor = 1 - Math.abs(tilt - 30) / 120 // peak near 30deg
     const facingSouthFactor = 1 - Math.min(Math.abs(azimuth - 180), 180) / 240 // peak at south
@@ -44,6 +71,8 @@ export default function CalculatorPreview() {
     el.style.transform = 'rotateX(0deg) rotateY(0deg)'
   }
 
+  const final = serverEstimate || estimate
+
   return (
     <div className="w-full">
       <div className="relative rounded-2xl border border-white/10 bg-white/5 p-4 overflow-hidden" style={{ perspective: '900px' }}>
@@ -53,7 +82,7 @@ export default function CalculatorPreview() {
           onPointerLeave={handlePointerLeave}
           className="aspect-[4/3] w-full rounded-xl bg-slate-900/60 ring-1 ring-white/10 transition-transform duration-150 ease-out will-change-transform cursor-pointer shadow-xl">
           {/* pseudo scene */}
-          <Scene tilt={tilt} azimuth={azimuth} score={estimate.score} />
+          <Scene tilt={tilt} azimuth={azimuth} score={final.score} />
         </div>
         <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-blue-500/10 via-transparent to-purple-400/10" />
       </div>
@@ -68,21 +97,26 @@ export default function CalculatorPreview() {
 
       {/* Mini metrics */}
       <div className="mt-4 grid grid-cols-3 gap-4 text-sm">
-        <div className="rounded-xl bg-white/5 border border-white/10 p-3">
-          <p className="text-white/60">Daily</p>
-          <p className="text-white text-lg font-semibold">{estimate.daily.toFixed(1)} kWh</p>
-        </div>
-        <div className="rounded-xl bg-white/5 border border-white/10 p-3">
-          <p className="text-white/60">Monthly</p>
-          <p className="text-white text-lg font-semibold">{Math.round(estimate.monthly)} kWh</p>
-        </div>
+        <MetricCard label="Daily" value={`${final.daily.toFixed(1)} kWh`} />
+        <MetricCard label="Monthly" value={`${Math.round(final.monthly)} kWh`} />
         <div className="rounded-xl bg-white/5 border border-white/10 p-3">
           <p className="text-white/60">Score</p>
           <div className="h-2 rounded bg-white/10 overflow-hidden mt-2">
-            <div className="h-full bg-gradient-to-r from-emerald-400 to-blue-500" style={{ width: `${estimate.score}%` }} />
+            <div className="h-full bg-gradient-to-r from-emerald-400 to-blue-500" style={{ width: `${final.score}%` }} />
           </div>
+          {serverEstimate && <p className="text-emerald-300/80 text-xs mt-2">Synced</p>}
+          {serverError && <p className="text-amber-300/80 text-xs mt-2">Offline, showing instant estimate</p>}
         </div>
       </div>
+    </div>
+  )
+}
+
+function MetricCard({ label, value }) {
+  return (
+    <div className="rounded-xl bg-white/5 border border-white/10 p-3">
+      <p className="text-white/60">{label}</p>
+      <p className="text-white text-lg font-semibold">{value}</p>
     </div>
   )
 }

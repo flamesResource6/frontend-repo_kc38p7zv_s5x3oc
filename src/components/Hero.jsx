@@ -15,11 +15,16 @@ export default function Hero() {
         alert("Thanks! We'll be in touch.")
         return
       }
-      const res = await fetch(`${backendUrl}/api/hello`)
+      const res = await fetch(`${backendUrl}/api/subscribe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
       const data = await res.json().catch(() => ({}))
-      alert(`Thanks! We'll be in touch.${data?.message ? `\n${data.message}` : ''}`)
+      const stored = data?.stored ? ' (saved)' : ''
+      alert(`Thanks! You're on the list${stored}.`)
     } catch (e) {
-      alert('Thanks! Backend is waking up.')
+      alert("Thanks! Backend is waking up.")
     }
   }
 
